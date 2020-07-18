@@ -29,9 +29,6 @@ class Feels extends Component {
   submitFeedback = () => {
     // send the value to the reducer
     this.props.dispatch( { type: 'SET_FEELS', payload: this.state.feels } )
-    this.setState({
-      feels: ''
-    })
 
     // Go to next page
     this.props.history.push('/understand');
