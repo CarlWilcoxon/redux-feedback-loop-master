@@ -5,9 +5,9 @@ import './App.css';
 
 import Home from '../Home/Home.js';
 import Feels from '../Feels/Feels.js';
-// import Understand from '../Understand/Understand.js';
-// import Support from '../Support/Support.js';
-// import Comment from '../Comment/Comment.js';
+import Understand from '../Understand/Understand.js';
+import Support from '../Support/Support.js';
+import Comment from '../Comment/Comment.js';
 // import Review from '../Review/Review.js';
 
 class App extends Component {
@@ -26,10 +26,10 @@ class App extends Component {
           <main>
             <Route exact path="/" component={Home} />
             <Route path="/feels" component={Feels} />
-            {/* <Route path="/understand" component={Understand} />
+            <Route path="/understand" component={Understand} />
             <Route path="/support" component={Support} />
             <Route path="/comment" component={Comment} />
-            <Route path="/review" component={Review} /> */}
+            {/* <Route path="/review" component={Review} /> */}
           </main>
         </Router>
       </div>

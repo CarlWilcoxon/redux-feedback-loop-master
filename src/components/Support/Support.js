@@ -33,7 +33,7 @@ class Support extends Component {
       <>
       <form>
         <div className="form-group">
-          <label>How are you feeling today?</label>
+          <label>How well are you being supported?</label>
           {/* The onChange here uses an anonymous function that calls another function
               - this is currying*/}
           <input type="number"

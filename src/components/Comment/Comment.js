@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Understand extends Component {
+class Comment extends Component {
 
   state = {
-    understand:''
+    comment:''
   }
 
   handleChange = ( event, propertyName ) => {
@@ -18,13 +18,13 @@ class Understand extends Component {
 
   submitFeedback = () => {
     // send the value to the reducer
-    this.props.dispatch( { type: 'SET_UNDERSTAND', payload: this.state.understand } )
+    this.props.dispatch( { type: 'SET_COMMENT', payload: this.state.comment } )
     this.setState({
-      understand: ''
+      comment: ''
     })
 
     // Go to next page
-    this.props.history.push('/support');
+    this.props.history.push('/comment');
   }
 
 
@@ -33,12 +33,12 @@ class Understand extends Component {
       <>
       <form>
         <div className="form-group">
-          <label>How well are you understanding the content?</label>
+          <label>Any comments you want to leave?</label>
           {/* The onChange here uses an anonymous function that calls another function
               - this is currying*/}
-          <input type="number"
-                  value={ this.state.understand }
-                  onChange={ event => this.handleChange(event, 'understand') } />
+          <input type="text"
+                  value={ this.state.comment }
+                  onChange={ event => this.handleChange(event, 'comment') } />
         </div>
         <button onClick={ this.submitFeedback }>Submit</button>
       </form>
@@ -55,4 +55,4 @@ const putReduxStateOnProps = (reduxState) => ({
 // connect() will make the connection between the redux store & our Component
 // connect gives us `dispatch`, this.props.dispatch( action )
 // to see redux state, send function to connect
-export default connect(putReduxStateOnProps)(Understand);
+export default connect(putReduxStateOnProps)(Comment);
