@@ -11,10 +11,18 @@ class Feels extends Component {
 
   // Setup the radio button handler
   onRadioChange = (event, propertyName) =>{
-    this.setState({
-      ...this.state,
-      [propertyName]: event.target.value
-    })
+    console.log( 'new value', event.target.value );
+    if (event.target.value === 1 ||
+      event.target.value === 2 ||
+      event.target.value === 3 ||
+      event.target.value === 4 ||
+      event.target.value === 5 ||
+      event.target.value === 6) {
+      this.setState({
+        ...this.state,
+        [propertyName]: event.target.value
+      })
+    }
   }
 
   // Setup the button handler
