@@ -8,7 +8,8 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 const setFeedback = (state={}, action) => {
-  // Set whatever attribute to the payload value
+
+  // Set whichever attribute to the payload value
   if ( action.type === 'SET_FEELS' ) {
 
     console.log('Setting feels', action);

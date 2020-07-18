@@ -12,7 +12,7 @@ class Home extends Component {
   render() {
     return (
       <>
-        <button onClick={ this.nextPage }>Submit</button>
+        <button onClick={ this.nextPage }>Feedback</button>
       </>
     );
   }
