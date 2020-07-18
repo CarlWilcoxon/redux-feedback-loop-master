@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Feels extends Component {
+class Understand extends Component {
 
   state = {
-    feels:''
+    understand:''
   }
 
   handleChange = ( event, propertyName ) => {
@@ -18,13 +18,13 @@ class Feels extends Component {
 
   submitFeedback = () => {
     // send the value to the reducer
-    this.props.dispatch( { type: 'SET_FEELS', payload: this.state.feels } )
+    this.props.dispatch( { type: 'SET_UNDERSTAND', payload: this.state.understand } )
     this.setState({
-      feels: ''
+      understand: ''
     })
 
     // Go to next page
-    this.props.history.push('/understand');
+    this.props.history.push('/support');
   }
 
 
@@ -37,8 +37,8 @@ class Feels extends Component {
           {/* The onChange here uses an anonymous function that calls another function
               - this is currying*/}
           <input type="number"
-                  value={ this.state.feels }
-                  onChange={ event => this.handleChange(event, 'feels') } />
+                  value={ this.state.understand }
+                  onChange={ event => this.handleChange(event, 'understand') } />
         </div>
         <button onClick={ this.submitFeedback }>Submit</button>
       </form>
@@ -55,4 +55,4 @@ const putReduxStateOnProps = (reduxState) => ({
 // connect() will make the connection between the redux store & our Component
 // connect gives us `dispatch`, this.props.dispatch( action )
 // to see redux state, send function to connect
-export default connect(putReduxStateOnProps)(Feels);
+export default connect(putReduxStateOnProps)(Understand);
