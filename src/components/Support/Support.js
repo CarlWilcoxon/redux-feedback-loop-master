@@ -7,10 +7,6 @@ class Support extends Component {
     support:''
   }
 
-  componentDidMount() {
-    //do stuff on start.
-  }
-
   handleChange = ( event, propertyName ) => {
     console.log( `In handleChange: propertyName=${propertyName}
                   event=`, event.target.value );
