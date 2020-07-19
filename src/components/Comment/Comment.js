@@ -37,6 +37,8 @@ class Comment extends Component {
                   value={ this.state.comment }
                   onChange={ event => this.handleChange(event, 'comment') } />
         </div>
+
+        <button onClick={ () => this.props.history.push('/support') }>Back</button>
         <button onClick={ this.submitFeedback }>Submit</button>
       </form>
       </>

@@ -55,6 +55,7 @@ class Support extends Component {
           <input onChange={event => this.onRadioChange(event, this.name) }
           type="radio" value={6} name="support" /> 6
         </p>
+          <button onClick={ () => this.props.history.push('/understand') }>Back</button>
           <button onClick={ this.submitFeedback }>Submit</button>
       </form>
       </>

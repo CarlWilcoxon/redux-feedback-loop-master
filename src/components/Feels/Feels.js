@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 class Feels extends Component {
 
 
+  componentDidMount() {
+    console.log(this.props.history);
+  }
+
   // Initialize the state
   state = {
     feels: 1,
@@ -55,6 +59,8 @@ class Feels extends Component {
           <input onChange={event => this.onRadioChange(event, this.name) }
           type="radio" value={6} name="feels" /> 6
         </p>
+
+          <button onClick={ () => this.props.history.push('/home') }>Back</button>
           <button onClick={ this.submitFeedback }>Submit</button>
       </form>
       </>

@@ -22,6 +22,7 @@ class Review extends Component {
       <>
       <p>{JSON.stringify(this.state)}</p>
 
+      <button onClick={ () => this.props.history.push('/comment') }>Back</button>
       <button onClick={ () => this.submitToServer(this.state) }>Submit</button>
 
       </>

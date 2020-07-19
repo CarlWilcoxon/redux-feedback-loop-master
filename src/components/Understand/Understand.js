@@ -55,7 +55,9 @@ class Understand extends Component {
           <input onChange={event => this.onRadioChange(event, this.name) }
           type="radio" value={6} name="understand" /> 6
         </p>
-          <button onClick={ this.submitFeedback }>Submit</button>
+
+        <button onClick={ () => this.props.history.push('/feels') }>Back</button>
+        <button onClick={ this.submitFeedback }>Submit</button>
       </form>
       </>
     );
