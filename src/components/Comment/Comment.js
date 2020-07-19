@@ -24,7 +24,7 @@ class Comment extends Component {
     })
 
     // Go to next page
-    this.props.history.push('/comment');
+    // this.props.history.push('/review');
   }
 
 
