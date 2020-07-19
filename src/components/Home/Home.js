@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 
 class Home extends Component {
 
+  componentDidMount() {
+    console.log(this.props.history);
+  }
+
  nextPage = () => {
     // Go to start feedback
     this.props.history.push('/feels');
