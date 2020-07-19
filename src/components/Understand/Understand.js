@@ -6,27 +6,21 @@ class Understand extends Component {
 
   // Initialize the state
   state = {
-    understand: 1
+    understand: 1,
   }
 
   // Setup the radio button handler
   onRadioChange = (event, propertyName) =>{
     console.log( 'new value', event.target.value );
-    if (event.target.value === 1 ||
-      event.target.value === 2 ||
-      event.target.value === 3 ||
-      event.target.value === 4 ||
-      event.target.value === 5 ||
-      event.target.value === 6) {
-      this.setState({
-        ...this.state,
-        [propertyName]: event.target.value
-      })
-    }
+
+    this.setState({
+      understand: event.target.value
+    })
   }
 
   // Setup the button handler
-  submitFeedback = () => {
+  submitFeedback = (event) => {
+    event.preventDefault();
     // send the value to the reducer
     this.props.dispatch( { type: 'SET_UNDERSTAND', payload: this.state.understand } )
 
@@ -38,22 +32,30 @@ class Understand extends Component {
   render() {
     return (
       <>
-      <form className="form-group" onChange={event => this.onRadioChange(event, 'understand') }>
+      <form className="form-group">
         <label>How well are you understanding the content?</label>
 
         {/* I made a div because I wanted the radio buttons on their own line */}
-        <div className="radio-btns">
-          1 <input defaultChecked type="radio" value="1" name="type" />
-          <input type="radio" value="2" name="type" />
-          <input type="radio" value="3" name="type" />
-          <input type="radio" value="4" name="type" />
-          <input type="radio" value="5" name="type" />
-          <input type="radio" value="6" name="type" /> 6
-        </div>
+        <p>
+          1 <input onChange={event => this.onRadioChange(event, this.name) }
+          defaultChecked={true} type="radio" value={1} name="understand" />
 
-        <div>
+          <input onChange={event => this.onRadioChange(event, this.name) }
+          type="radio" value={2} name="understand" />
+
+          <input onChange={event => this.onRadioChange(event, this.name) }
+          type="radio" value={3} name="understand" />
+
+          <input onChange={event => this.onRadioChange(event, this.name) }
+          type="radio" value={4} name="understand" />
+
+          <input onChange={event => this.onRadioChange(event, this.name) }
+          type="radio" value={5} name="understand" />
+
+          <input onChange={event => this.onRadioChange(event, this.name) }
+          type="radio" value={6} name="understand" /> 6
+        </p>
           <button onClick={ this.submitFeedback }>Submit</button>
-        </div>
       </form>
       </>
     );
