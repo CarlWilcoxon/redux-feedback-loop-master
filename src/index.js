@@ -7,12 +7,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const setFeedback = (state={
-  feels: 1,
-  understand: 2,
-  support: 5,
-  comment: ''
-}, action) => {
+const setFeedback = (state={}, action) => {
 
   // Set whichever attribute to the payload value
   if ( action.type === 'SET_FEELS' ) {
