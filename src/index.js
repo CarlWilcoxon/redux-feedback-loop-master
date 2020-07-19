@@ -7,7 +7,12 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const setFeedback = (state={}, action) => {
+const setFeedback = (state={
+  feels: 1,
+  understand: 2,
+  support: 5,
+  comment: ''
+}, action) => {
 
   // Set whichever attribute to the payload value
   if ( action.type === 'SET_FEELS' ) {
@@ -33,18 +38,11 @@ const setFeedback = (state={}, action) => {
   return state;
 }
 
-// I think this will get the state from setFeedback and return it
-const getFeedback = (state, action) => {
-  return setFeedback;
-}
-
-
 // Create the Redux store - place to keep our shared data
 // All reducers run each time an action is dispatched
 const storeInstance = createStore(
   combineReducers( {
     setFeedback,
-    getFeedback,
   } ),
   applyMiddleware( logger )
 )
