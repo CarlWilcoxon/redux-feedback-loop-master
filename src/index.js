@@ -33,18 +33,11 @@ const setFeedback = (state={}, action) => {
   return state;
 }
 
-// I think this will get the state from setFeedback and return it
-const getFeedback = (state, action) => {
-  return setFeedback;
-}
-
-
 // Create the Redux store - place to keep our shared data
 // All reducers run each time an action is dispatched
 const storeInstance = createStore(
   combineReducers( {
     setFeedback,
-    getFeedback,
   } ),
   applyMiddleware( logger )
 )

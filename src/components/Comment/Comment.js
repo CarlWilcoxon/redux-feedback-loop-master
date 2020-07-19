@@ -19,12 +19,9 @@ class Comment extends Component {
   submitFeedback = () => {
     // send the value to the reducer
     this.props.dispatch( { type: 'SET_COMMENT', payload: this.state.comment } )
-    this.setState({
-      comment: ''
-    })
 
     // Go to next page
-    // this.props.history.push('/review');
+    this.props.history.push('/review');
   }
 
 
